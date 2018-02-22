@@ -48,24 +48,28 @@ cc = (-1)*cc;
 d=bb*bb-4*aa*cc;
 if(d>0)
 {
- x2=-(bb-Math.sqrt(d))/(2*aa);
- x1=-(bb+Math.sqrt(d))/(2*aa);
+	x2=Math.round(-(bb-Math.sqrt(d))/(2*aa));
+  x1=Math.round(-(bb+Math.sqrt(d))/(2*aa));
 }
 if(d=0)
 {
+
 x2=bb/(2*aa);
 x1=x1;
+x1=Number(x1);
+x2=Number(x2);
 }
-if(d<0)
-{
-x1=x2=undefined;
-}
+
 if(x1>x2)
 {
+	x1=Number(x1);
+	x2=Number(x2);
 var solutions=[x2,x1];
 }
 else
 {
+	x1=Number(x1);
+	x2=Number(x2);
 var solutions=[x1,x2];
 }
 return solutions;
